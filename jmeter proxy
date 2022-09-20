@@ -1,0 +1,56 @@
+<-------------------------------JMETER Recording using HTTP Proxy Recorder---------------->
+
+Step 1) Setting the HTTP Proxy server
+
+	* Start JMeter
+	* Select Test Plan on the tree
+	* Add Thread Group
+	* Right click on the Test Plan and add a new thread group: Add => Threads (Users) =>Thread Group
+
+	* Add HTTP Request
+	Select the Thread Group;
+	* right click Add => Config Element => HTTP Request Defaults
+	[ In new HTTP Request Defaults element: In Server name or IP, enter “google.com”. You should keep the others fields blank]
+
+	* Add Recording Controller
+	  Right click on the “Thread Group” and add a recording controller: Add => Logic Controller =>Recording Controller
+	* Add Proxy Server to WorkBench
+		Right click on the Workbench and add the http proxy: Add => Non-Test Elements => HTTP Proxy Server
+
+	 * Set Target Controller where your recorded scripts will be added
+	* Start Proxy Server
+	Return to HTTP Proxy Server, and click the Start button at the bottom. Now your JMeter proxy server start
+
+2) Step to Install Root CA Certificate 
+	* Start your Browser (I used Firefox), 
+	* choose Settings >Privacy and Security > 
+	* Certificates > View Certificates >Authorities > 
+	* Browser Jmeter Root Ca Certificate is install or not ( If not Import it ) > click on Import > Bin Folder (apache jmeter) >Apache Root CA Certificate > Select 	>Import >
+	* To verify Certificate is successfully Installed Browse Jmeter Certificate.
+
+3) Function For Dynamic Date 
+
+	${__time(dd/MM/yyyy,)}
+	${__time(hh:mm a,)}
+
+	${__time(dd-mmm-yyyy HHmmss)} 20-032-2015 233224
+	${__time(d-MMM-yyyy hhmmss)}  20-May-2015 113224
+	${__time(dd-m-yyyy hhmmss)}   20-32-2015 113224
+	${__time(D-M-yyyy hhmmss)}    140-5-2015 113224
+	${__time(DD-MM-yyyy)}         140-05-2015
+
+	query=NDLS-GAYA-20220918-12302-3A-GN
+	${__time(yyyy)}	2020	Current Year
+	${__time(MM)}
+	${__time(d)} / ${__time(dd)}	1 / 01
+	or
+	21 / 21	Current Day in one or two digits
+
+	 ${__Random(5)}
+
+	${__timeShift(yyyy-MM-dd HH:mm:ss,,P2DT2H,,)} will generate a future date and time by adding 2 days and 2 hours in the current timestamp
+
+4) CSV Data Set Config (Parameterization )
+
+
+	  
