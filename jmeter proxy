@@ -53,4 +53,14 @@ Step 1) Setting the HTTP Proxy server
 4) CSV Data Set Config (Parameterization )
 
 
-	  
+	  5) Using Chrome Proxy For HTTP Script Recording 
+	chrome > Settings > Browse Proxy Settings >open your computer Proxy Setting > LAN Settings > Proxy > Manual Proxy setup
+	[ Address = localhost , port= 8888 ]
+
+	2) if the certificate is not installed , when you statrt your http script recorder , i will show " your connection is not private ", so install jmeter 	certificate in Browser
+	3) for installing certificate in browser > visit bin directory in jmeter >Browser "Apache jmeter Root CA" > Double click on It > Install Certificate >
+	4) Current user > choose Place all certificate in Following Store > Click on Browse > Choose "Trusted Root Certification Authority " > Next >Finish > Yes
+
+	<----------------for confirmation------------->
+	1) chrome settings > Privacy & Security > Security > Manage Certificate > Trusted Root Certification Authorities > Browser jmeter certificate
+
